@@ -26,7 +26,7 @@ ledMatrix.ShowLetter(char letter, Color? foreColor = null, Color? backColor = nu
 ledMatrix.ShowMessage(string message, Color? foreColor = null, Color? backColor = null, Rotation textRotation = Rotation.Rotate0, Direction scrollDirection = Direction.Left, int speedInMs = 90)
 ```
 
-- Show a series of values (Unicode supported)
+- Show a series of values
 
 ```csharp
 ledMatrix.ShowSeriesValues(float[] values, Color? foreColor = null, Color? backColor = null, bool fill = false, Rotation rotation = Rotation.Rotate0, bool forward = true, int speedInMs = 90)
