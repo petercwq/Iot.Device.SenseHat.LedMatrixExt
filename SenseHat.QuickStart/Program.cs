@@ -1,7 +1,10 @@
-﻿using Iot.Device.Common;
+﻿using System.Drawing;
+using Iot.Device.Common;
 using Iot.Device.SenseHat;
 using Iot.Device.SenseHat.LedMatrixExt;
-using System.Drawing;
+
+var cancelled = false;
+Console.CancelKeyPress += (s, e) => { e.Cancel = true; cancelled = true; };
 
 using SenseHat sh = new();
 
@@ -16,22 +19,22 @@ foreach (var rotation in Enum.GetValues<Rotation>())
     Console.WriteLine("Showing series values - forward - fill - {0}", rotation);
     sh.LedMatrix.ShowSeriesValues(series, Color.Blue, Color.Black, true, rotation, true, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Showing series values - backward - fill - {0}", rotation);
     sh.LedMatrix.ShowSeriesValues(series, Color.Blue, Color.Black, true, rotation, false, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Showing series values - forward - not fill - {0}", rotation);
     sh.LedMatrix.ShowSeriesValues(series, Color.Blue, Color.Black, false, rotation, true, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Showing series values - backward - not fill - {0}", rotation);
     sh.LedMatrix.ShowSeriesValues(series, Color.Blue, Color.Black, false, rotation, false, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Showing letters - {0}", rotation);
     int index = 0;
@@ -44,40 +47,39 @@ foreach (var rotation in Enum.GetValues<Rotation>())
         Thread.Sleep(200);
     }
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Scrolling message to left- {0}", rotation);
 
     sh.LedMatrix.ShowMessage(message, Color.Blue, Color.Black, rotation, Direction.Left, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Scrolling messageto right- {0}", rotation);
 
     sh.LedMatrix.ShowMessage(message, Color.Red, Color.Black, rotation, Direction.Right, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Scrolling message to up- {0}", rotation);
 
     sh.LedMatrix.ShowMessage(message, Color.Green, Color.Black, rotation, Direction.Up, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 
     Console.WriteLine("Scrolling message to down- {0}", rotation);
 
     sh.LedMatrix.ShowMessage(message, Color.Yellow, Color.Black, rotation, Direction.Down, speedInMs);
 
-    sh.LedMatrix.Clear();
+    if (cancelled) break;
 }
-
 
 int n = 0;
 int x = 3, y = 3;
 // set this to the current sea level pressure in the area for correct altitude readings
 var defaultSeaLevelPressure = WeatherHelper.MeanSeaLevel;
 
-while (true)
+while (!cancelled)
 {
     Console.Clear();
 
@@ -116,6 +118,8 @@ while (true)
 
     Thread.Sleep(1000);
 }
+
+sh.LedMatrix.Clear();
 
 (int, int, bool) JoystickState(SenseHat sh)
 {
