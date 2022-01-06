@@ -5,7 +5,7 @@ Extension methods of SenseHatLedMatrix to show unicode letter, message, or serie
 - Create a new console app (e.g. `dotnet new console -o SenseHat.Sample`).
 - Install `Iot.Device.SenseHat.LedMatrixExt` from NuGet (e.g. navigate inside the project directory and run `dotnet add package Iot.Device.SenseHat.LedMatrixExt`).
 
-- Explore the sample app [SenseHat.QuickStart](.\SenseHat.QuickStart\Program.cs) on how to build and run the app.
+- Explore the sample app [SenseHat.QuickStart](./SenseHat.QuickStart/Program.cs) on how to build and run the app.
 
 ## Extension methods of SenseHatLedMatrix
 
