@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>10</LangVersion>
-		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>petercwq</Authors>
 		<Company />
@@ -15,6 +15,8 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>.NET;Core;RPi;IoT;LED;Sense HAT;Raspberry PI;Raspbian</PackageTags>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<SignAssembly>False</SignAssembly>
+		<PackageVersion>1.0.1</PackageVersion>
 	</PropertyGroup>
 
 	<ItemGroup>

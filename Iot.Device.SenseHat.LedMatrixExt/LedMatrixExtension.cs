@@ -77,6 +77,7 @@ public static class LedMatrixExtension
     /// Clear led matrix by filling it with Black.
     /// </summary>
     /// <param name="ledMatrix">Led matrix to clear.</param>
+    /// <param name="backColor">Background color.</param>
     public static void Clear(this SenseHatLedMatrix ledMatrix, Color? backColor = null)
     {
         ledMatrix.Fill(backColor ?? Color.Black);
