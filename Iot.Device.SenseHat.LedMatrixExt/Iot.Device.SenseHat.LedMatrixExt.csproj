@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;netcoreapp3.1;netstandard2.0;</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>10</LangVersion>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>petercwq</Authors>
+		<Company />
+		<Description>Extension methods of SenseHatLedMatrix to show unicode letter, message, or series values on Raspberry Pi Sense HAT running on Linux.</Description>
+		<PackageProjectUrl>https://github.com/petercwq/Iot.Device.SenseHat.LedMatrixExt</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/petercwq/Iot.Device.SenseHat.LedMatrixExt</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>.NET;Core;RPi;IoT;LED;Sense HAT;Raspberry PI;Raspbian</PackageTags>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="$(AssemblyName).Tests" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Iot.Device.Bindings" Version="1.5.0" />
+	</ItemGroup>
+
+</Project>
