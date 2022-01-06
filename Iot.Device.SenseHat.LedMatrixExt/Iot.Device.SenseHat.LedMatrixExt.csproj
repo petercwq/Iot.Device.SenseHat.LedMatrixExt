@@ -10,7 +10,7 @@
 		<Authors>petercwq</Authors>
 		<Company />
 		<Description>Extension methods of SenseHatLedMatrix to show unicode letter, message, or series values on Raspberry Pi Sense HAT running on Linux.</Description>
-		<PackageProjectUrl>https://github.com/petercwq/Iot.Device.SenseHat.LedMatrixExt</PackageProjectUrl>
+		<PackageProjectUrl></PackageProjectUrl>
 		<RepositoryUrl>https://github.com/petercwq/Iot.Device.SenseHat.LedMatrixExt</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>.NET;Core;RPi;IoT;LED;Sense HAT;Raspberry PI;Raspbian</PackageTags>
