@@ -30,7 +30,7 @@ To access the nth pixel in a row, right-shift by 7-n.
     (0x30 >> 1) & 1 == 0-------------+ |
     (0x30 >> 0) & 1 == 0---------------+
 */
-internal static class Font8x8
+public static class Font8x8
 {
     private static readonly Dictionary<char, byte[]> FONTDICT = new()
     {
@@ -654,10 +654,8 @@ internal static class Font8x8
             throw new ArgumentException("font must be an array of 8 bytes", nameof(glyph));
         }
 
-        if (!FONTDICT.ContainsKey(letter))
-        {
-            FONTDICT.Add(letter, glyph.Select(x => x).ToArray());
-        }
+        // allow replace
+        FONTDICT[letter] = glyph;
     }
 
     /// <summary>
